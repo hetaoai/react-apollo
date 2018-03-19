@@ -171,13 +171,14 @@ class Mutation<TData = any, TVariables = OperationVariables> extends React.Compo
     //
     // Going forward, we should only allow using the full operation + variables to
     // refetch.
+    /*
     if (refetchQueries && refetchQueries.length && Array.isArray(refetchQueries)) {
       refetchQueries = (refetchQueries as any).map((x: string | PureQueryOptions) => {
         if (typeof x === 'string' && this.context.operations) return this.context.operations.get(x);
         return x;
       });
       delete options.refetchQueries;
-    }
+    }*/
 
     return this.client.mutate({
       mutation,
